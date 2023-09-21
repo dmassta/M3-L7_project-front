@@ -1,11 +1,46 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>RPG</title>
-    <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
+    <link href="/resources/favicon.ico" rel="icon"/>
     <link href="/css/my.css" rel="stylesheet">
+    <script src=https://code.jquery.com/jquery-3.7.1.js></script>
+    <script src="/js/my.js"></script>
 </head>
-<body>
+
+<body onload="get_list(0)">
 <h1>RPG admin panel</h1>
 
+<form>
+    <label for="accounts">Accounts per page</label>
+    <select id="accounts" onchange="get_list()">
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+    </select>
+</form>
+
+<div id="tableDiv">
+    <br>
+    <table id="mainTable" >Accounts:
+        <tr id="tr_head">
+            <th>#</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Race</th>
+            <th>Profession</th>
+            <th>Level</th>
+            <th>Birthday</th>
+            <th>Banned</th>
+            <th>Edit<th>
+            <th>Delete<th>
+        </tr>
+    </table>
+    <div id="button_row">Pages
+    </div>
+</div>
+<br>
 </body>
+
 </html>

@@ -1,0 +1,46 @@
+body {
+    font-family: "Helvetica", serif;
+}
+h1 {
+    text-align: center;
+    color: dimgray;
+}
+form label, select {
+    font-size: medium;
+    background-color: grey;
+    border-radius: 3px;
+}
+select {
+    color: antiquewhite;
+    padding: 0.2em 0.2em 0.2em;
+}
+
+form label{
+    color: antiquewhite;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+#mainTable, th, td{
+    padding: 5px;
+    text-align: left;
+
+    border: 1px solid antiquewhite;
+    border-collapse: separate;
+    border-radius: 3px;
+
+    color: antiquewhite;
+    background-color: dimgrey;
+}
+
+.button_class {
+    text-align: center;
+    width: 32px;
+    margin: 5px;
+    padding: 5px;
+    background-color: grey;
+    color: antiquewhite;
+    font-size: 14px;
+    border-radius: 3px;
+}
