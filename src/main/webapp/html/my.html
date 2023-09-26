@@ -8,39 +8,93 @@
     <script src="/js/my.js"></script>
 </head>
 
-<body onload="get_list(0)">
-<h1>RPG admin panel</h1>
+<body onload="get_list()">
+<div id="content">
+    <h1>RPG admin panel</h1>
 
-<form>
-    <label for="accounts">Accounts per page</label>
-    <select id="accounts" onchange="get_list()">
-        <option value="3">3</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="20">20</option>
-    </select>
-</form>
+    <div id="tableDiv">
+        <div id="tableDiv_name">Accounts:</div>
+        <form id="accounts_per_page">
+            <label for="accounts">Accounts per page</label>
+            <select id="accounts" onchange="get_list()">
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+        </form>
+        <table id="mainTable">
+            <tr id="tr_head">
+                <th>#</th>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Race</th>
+                <th>Profession</th>
+                <th>Level</th>
+                <th>Birthday</th>
+                <th>Banned</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </table>
+        <div id="button_row">Pages
+        </div>
+    </div>
+    <div id="bottom_break"></div>
 
-<div id="tableDiv">
-    <br>
-    <table id="mainTable" >Accounts:
-        <tr id="tr_head">
-            <th>#</th>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Race</th>
-            <th>Profession</th>
-            <th>Level</th>
-            <th>Birthday</th>
-            <th>Banned</th>
-            <th>Edit<th>
-            <th>Delete<th>
-        </tr>
-    </table>
-    <div id="button_row">Pages
+    <div id="createAccount">
+        <form id="create_form">Create new account:
+            <br><br>
+            <label for="create_name">Name</label>
+            <input id="create_name" class="create_form"
+                   type="text" placeholder="input name here" minlength="1" maxlength="12">
+            <br>
+            <label for="create_title">Title</label>
+            <input id="create_title" class="create_form"
+                   type="text" placeholder="input title here" minlength="1" maxlength="30">
+            <br>
+            <label for="create_race">Race</label>
+            <select id="create_race" class="create_form">
+                <option value='HUMAN'>HUMAN</option>
+                <option value='DWARF'>DWARF</option>
+                <option value='ELF'>ELF</option>
+                <option value='GIANT'>GIANT</option>
+                <option value='ORC'>ORC</option>
+                <option value='TROLL'>TROLL</option>
+                <option value='HOBBIT'>HOBBIT</option>
+            </select>
+            <br>
+            <label for="create_prof">Profession</label>
+            <select id="create_prof" class="create_form">
+                <option value='WARRIOR'>WARRIOR</option>
+                <option value='ROGUE'>ROGUE</option>
+                <option value='SORCERER'>SORCERER</option>
+                <option value='CLERIC'>CLERIC</option>
+                <option value='PALADIN'>PALADIN</option>
+                <option value='NAZGUL'>NAZGUL</option>
+                <option value='WARLOCK'>WARLOCK</option>
+                <option value='DRUID'>DRUID</option>
+            </select>
+            <br>
+            <label for="create_level">Level</label>
+            <input type="number" id="create_level" class="create_form"
+                   placeholder="input level here" min="0" max="100">
+            <br>
+            <label for="create_bd">Birthdate</label>
+            <input type="date" id="create_bd" class="create_form" min="200-01-01" max="3000-12-31">
+            <br>
+            <label for="create_banned">Banned</label>
+            <select id="create_banned" class="create_form">
+                <option value='false'>false</option>
+                <option value='true'>true</option>
+            </select>
+            <br>
+        </form>
+        <span>
+            <button type="submit" id="submit_input" onclick="createAccount()">Submit</button>
+        </span>
+        <p>Click the submit button to save changes.</p>
     </div>
 </div>
-<br>
 </body>
-
 </html>
